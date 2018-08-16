@@ -1,0 +1,10 @@
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
+.margin{
+    margin: 5px 0px;;
+}
+.card{
+    border: none;
+}
