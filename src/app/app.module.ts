@@ -13,13 +13,17 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { HttpClientModule }    from '@angular/common/http';
 
+import {TableModule} from 'primeng/table';
+import { DataTableComponent } from './data-table/data-table.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     UserComponent,
     UserDetailComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DataTableComponent
   ],
   imports: [
     BrowserModule,
@@ -28,9 +32,10 @@ import { HttpClientModule }    from '@angular/common/http';
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-    // HttpClientInMemoryWebApiModule.forRoot(
-    //   InMemoryDataService, { dataEncapsulation: false }
-    // )
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    ),
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

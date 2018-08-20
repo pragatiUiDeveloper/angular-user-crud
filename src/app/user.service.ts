@@ -15,8 +15,8 @@ export class UserService {
     private http: HttpClient
   ) { }
 
-  //private usersUrl = 'api/users';  // URL to web api
-  private usersUrl = 'https://jsonplaceholder.typicode.com/users'
+  private usersUrl = 'api/users';  // URL to web api
+  //private usersUrl = 'https://jsonplaceholder.typicode.com/users'
 
   /** GET users from the server */
   getUsers (): Observable<User[]> {

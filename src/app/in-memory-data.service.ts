@@ -244,6 +244,89 @@ export class InMemoryDataService implements InMemoryDbService {
             }
           }
         ];
-    return {users};
+
+         const cars = [
+          {
+            "vin": 123,
+            "year": 2018,
+            "brand": "Audi",
+            "colour": "Gray",
+          },
+          {"vin": 146,
+            "year": 2018,
+            "brand": "Renault",
+            "colour": "Black",
+          },
+          {"vin": 1653,
+            "year": 2018,
+            "brand": "Mercedes",
+            "colour": "Black",
+          },
+          {"vin": 12973,
+            "year": 2018,
+            "brand": "Mercedes",
+            "colour": "	Red",
+          }
+        ];  
+
+         const carsModel ={
+           "headers": [
+            "vin","year","brand","colour"
+           ],
+           "dataList": [
+              {
+                "vin": 123,
+                "year": 2018,
+                "brand": "Audi",
+                "colour": "Gray",
+              },
+              { "vin": 146,
+                "year": 2018,
+                "brand": "Renault",
+                "colour": "Black",
+              },
+              { "vin": 1653,
+                "year": 2018,
+                "brand": "Mercedes",
+                "colour": "Black",
+              },
+              { "vin": 12973,
+                "year": 2018,
+                "brand": "Mercedes",
+                "colour": "	Red",
+              }
+            ]
+         };        
+
+         const usersModel ={
+           "headers": [
+            "id","name","username","email"
+           ],
+           "dataList": [
+              {
+                "id": 1,
+                "name": "Pragati",
+                "username": "prags",
+                "email": "pragati@gmail.com",
+              },
+              { "id": 2,
+                "name": 2018,
+                "username": "Rahuls",
+                "email": "rahul@gmail.com",
+              },
+              { "id": 3,
+                "name": 2018,
+                "username": "Rohz",
+                "email": "roahn@gmail.com",
+              },
+              { "id": 4,
+                "name": 2018,
+                "username": "Rishu",
+                "email": "risha@gmail.com",
+              }
+            ]
+         };        
+
+    return {users ,cars, carsModel ,usersModel};
   }
 }
