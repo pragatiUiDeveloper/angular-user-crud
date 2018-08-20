@@ -21,11 +21,12 @@
       </ng-template>
   </p-table>
 
-<hr>
+ <hr>
 
-  <h1>Dynamic Cars Table</h1><br>
+  <h1>Dynamic Cars Table with Lazy Loading</h1><br>
 
-  <p-table [value]="cars" class="table table-striped table-hover flex-center margin padding40">
+  <p-table [value]="cars" class="table table-striped table-hover flex-center margin padding40"  [lazy]="true" (onLazyLoad)="loadCarsLazy($event)" [paginator]="true" 
+    [rows]="4" [totalRecords]="totalRecords" [loading]="loading">
       <ng-template pTemplate="header">
           <tr>
               <th *ngFor="let col of cols">
