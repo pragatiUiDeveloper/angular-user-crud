@@ -4,8 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
+import { CarsComponent } from './cars/cars.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DataTableComponent } from './data-table/data-table.component';
 
 import { AppRoutingModule } from './/app-routing.module';
 
@@ -13,8 +15,10 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { HttpClientModule }    from '@angular/common/http';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import {TableModule} from 'primeng/table';
-import { DataTableComponent } from './data-table/data-table.component';
+import { DataTableModule } from 'primeng/primeng';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,8 @@ import { DataTableComponent } from './data-table/data-table.component';
     UserComponent,
     UserDetailComponent,
     PageNotFoundComponent,
-    DataTableComponent
+    DataTableComponent,
+    CarsComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,9 @@ import { DataTableComponent } from './data-table/data-table.component';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
-    TableModule
+    BrowserAnimationsModule,
+    TableModule,
+    DataTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -15,10 +15,6 @@ export class DashboardComponent implements OnInit {
   cars: Car[];
   users: User[];
   cols: any[];
-  baseUrl: string ='api';
-  url: string ='carsModel';
-  params: string[] = ['param1','param2'];
-  CarsModel: string = 'Cars Model';
 
   baseUrl2: string ='api';
   url2: string ='usersModel';
