@@ -17,4 +17,9 @@ export class CarsComponent implements OnInit {
   ngOnInit() {
   }
 
+  functionInParent(message:string):void {
+    console.log(message);
+    console.log('I am in cars component')
+  }
+
 }

@@ -1,0 +1,90 @@
+<div class="container-fluid text-align-left">     
+
+  <h1>Form</h1>
+  <form action="" #userForm="ngForm" *ngIf="!submitted" (ngSubmit)="onSubmit()" novalidate>
+    {{userForm.value |json}} <br><hr>
+    {{formUserModel |json}} <br><hr>
+    {{name.untouched}}
+    <div class="form-group">
+      <label for="">Name</label>
+      <input type="text" class="form-control" [class.is-invalid]="name.invalid && name.touched" [(ngModel)]=formUserModel.name
+       name="name" required #name="ngModel">
+      <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required</small>
+    </div>
+
+    <div class="form-group">
+      <label for="">Email</label>
+      <input type="email" class="form-control" [class.is-invalid]="email.invalid  && email.touched" [(ngModel)]=formUserModel.email
+       name="email" required #email="ngModel">
+       <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required</small>
+    </div>
+
+    <div class="form-group">
+      <label for="">Phone</label>
+      <input type="phone" class="form-control" [class.is-invalid]="email.invalid  && email.touched" [(ngModel)]=formUserModel.phone
+       name="phone" pattern="^\d{10}$" required #phone="ngModel">
+      <!--<small class="text-danger" [class.d-none]="phone.valid || phone.untouched">Phone No is required and should be 10 digits</small>-->
+      <div *ngIf="phone.errors && (phone.invalid || phone.touched)">
+        <small class="text-danger"*ngIf="phone.errors.required">Phone No is required</small>
+        <small class="text-danger"*ngIf="phone.errors.pattern">Phone No is should be 10 digits</small>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <select class="custom-select" (blur)="validateTopic(topic.value)" (change)="validateTopic(topic.value)" #topic="ngModel" [class.is-invalid]="topicHasError && topic.touched" name="topic" [(ngModel)]="formUserModel.topic">
+        <option value="default">I am interested in</option>
+        <option *ngFor="let topic of topics">{{ topic }}</option>
+      </select>
+      <small class="text-danger" [class.d-none]="!topicHasError || topic.untouched">Please choose a topic</small>      
+    </div>
+
+    <div class="form-group">
+      <label for="">Gender: </label>
+      <div class="form-check">
+       <input  class="form-check-input" type="radio" name="gender" value="male" required [(ngModel)]=formUserModel.gender >
+        <label type="radio" class="form-check-label" >Male</label>
+      </div>
+      <div class="form-check">
+       <input  class="form-check-input" type="radio" name="gender" value="female" [(ngModel)]=formUserModel.gender >
+        <label type="radio" class="form-check-label" >Female</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="">Timing Preference</label>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" [(ngModel)]=formUserModel.morningPreference name="morningPreference" value="morning">
+        <label type="checkbox" class="form-check-label" >Morning</label>
+      </div>
+       <div class="form-check">
+        <input type="checkbox" class="form-check-input" [(ngModel)]=formUserModel.eveningPreference name="eveningPreference" value="evening">
+        <label type="checkbox" class="form-check-label" >Evening</label>
+      </div>
+    </div>
+
+   <div class="form-group">
+    <label for="comment">Comment:</label>
+    <textarea class="form-control" rows="5" id="comment" [(ngModel)]=formUserModel.comment name="comment"></textarea>
+   </div>
+
+   <!--<div ngModelGroup="address"  #addressCtrl="ngModelGroup">
+      <div class="form-group">
+         <label for="comment">Street:</label>
+         <input type="text" class="form-control" name="street">
+      </div>
+
+      <div class="form-group">
+         <label for="comment">City:</label>
+         <input type="text" class="form-control" name="city">
+      </div>
+
+      <div class="form-group">
+         <label for="comment">Pin:</label>
+         <input type="text" class="form-control" name="pin">
+      </div>
+   </div>-->
+
+   <button class="btn btn-danger submit-btn" [disabled]="userForm.form.invalid || topicHasError" type="submit"> Submit </button><br><br>
+  </form>
+</div>

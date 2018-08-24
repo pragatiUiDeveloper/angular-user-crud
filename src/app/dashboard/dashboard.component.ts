@@ -73,7 +73,12 @@ export class DashboardComponent implements OnInit {
                 this.cars = this.datasource.slice(event.first, (event.first + event.rows));
                 this.loading = false;
             }
-        }, 1000);
+        }, 5000);
     }
+
+  functionInParent(message:string):void {
+    console.log(message);
+    console.log('I am in dashboard component')
+  }
 
 }

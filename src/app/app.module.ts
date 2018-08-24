@@ -15,10 +15,15 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { HttpClientModule }    from '@angular/common/http';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';//for prime ng
 
 import {TableModule} from 'primeng/table';
 import { DataTableModule } from 'primeng/primeng';
+
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FormComponent } from './form/form.component';//for font awesome
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,8 @@ import { DataTableModule } from 'primeng/primeng';
     UserDetailComponent,
     PageNotFoundComponent,
     DataTableComponent,
-    CarsComponent
+    CarsComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,9 @@ import { DataTableModule } from 'primeng/primeng';
     ),
     BrowserAnimationsModule,
     TableModule,
-    DataTableModule
+    DataTableModule,
+    AngularFontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

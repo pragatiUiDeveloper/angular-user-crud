@@ -18,3 +18,12 @@
 .padding40{
    padding: 0px 40px;
 }
+.text-align-left{
+    text-align: left;
+}
+.submit-btn:disabled{
+    color: #fff;
+    background-color: grey;
+    border-color: grey;
+    cursor: not-allowed;
+}

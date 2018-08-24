@@ -21,6 +21,14 @@
                   {{field[header]}}
               </td>
           </tr>
-      </ng-template>
-  </p-table>
+      </ng-template>    
+  </p-table><br>
+  <div>
+      <button class="danger" (click)="upvote()"><i class="fas fa-thumbs-up"></i></button>
+      {{votes}}
+      <button class="danger" (click)="downvote()"><i class="fas fa-thumbs-down"></i></button>
+  </div><br>
+      <button class="danger" (click)='onClick()'>Click me please!</button> <br>
+
+        
 

@@ -5,6 +5,7 @@ import { UserComponent }      from './user/user.component';
 import { CarsComponent }      from './cars/cars.component';
 import { DashboardComponent }      from './dashboard/dashboard.component';
 import { UserDetailComponent }      from './user-detail/user-detail.component';
+import { FormComponent }      from './form/form.component';
 import { PageNotFoundComponent }      from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'cars', component: CarsComponent },
   { path: 'user/:id', component: UserDetailComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'form', component: FormComponent },
   { path: "**", component: PageNotFoundComponent}
 ];
 
