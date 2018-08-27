@@ -1,0 +1,25 @@
+.users {
+  list-style-type: none;
+  padding: 10px 20%;
+  text-align: center;
+}
+
+.users li{
+    display: flex;
+    justify-content: space-between;
+}
+
+.users a {
+  color: #dc3545;
+  font-family: sans-serif;
+  text-decoration: none;
+  padding-top: 12px;
+}
+
+.users li:hover {
+  background-color:#ebd0d3;
+}
+
+.users button {
+    margin: 5px 0px;
+}

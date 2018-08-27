@@ -1,0 +1,50 @@
+<app-data-table [baseUrl]='baseUrl2' [url]='url2' [params]='' [modelName]='UsersModel' (displayInParent)='functionInParent($event)'></app-data-table><br>
+
+ <h1>Non Dynamic User Table</h1><br>
+
+  <p-table [value]="users"  *ngIf="users" class="table table-striped table-hover flex-center margin padding40ng " >
+      <ng-template pTemplate="header">
+          <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>City</th>
+              <th>Website</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-user>
+          <tr >
+              <td>{{user.name}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.address.city}}</td>
+              <td>{{user.website}}</td>
+          </tr>
+      </ng-template>
+  </p-table>
+
+ <hr>
+
+  <h1>Dynamic Cars Table with Lazy Loading</h1><br>
+
+  <p-table [value]="cars" class="table table-striped table-hover flex-center margin padding40"  [lazy]="true" (onLazyLoad)="loadCarsLazy($event)" [paginator]="true" 
+    [rows]="4" [totalRecords]="totalRecords" [loading]="loading">
+      <ng-template pTemplate="header">
+          <tr>
+              <th *ngFor="let col of cols">
+                  {{col.header}}
+              </th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-car>
+          <tr>
+              <td *ngFor="let col of cols">
+                      {{car[col.field]}}
+              </td>
+          </tr>
+      </ng-template>
+  </p-table>
+
+
+
+
+
+

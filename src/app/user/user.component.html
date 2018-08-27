@@ -1,0 +1,15 @@
+<p>
+  user works!
+</p>
+
+<ul class="users">
+  <li *ngFor="let user of users">
+    <a routerLink="/user/{{user.id}}">
+      <span class="badge">{{user?.id}}</span> {{user?.name}}
+    </a>
+    <button class='btn btn-danger' title="delete User"
+      (click)="delete(user)">X</button>
+  </li>
+</ul>
+
+

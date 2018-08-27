@@ -1,0 +1,32 @@
+
+<div  *ngIf="user ; else noUserFound" class="flex-center margin">
+  <div class="card" style="width:400px">
+    <!--<img class="card-img-top" src="../assests/icon-person-red.png" alt="Card image" style="width:100%">-->
+    <div class="card-body">
+      <h4 class="card-title">{{user.name}}</h4>
+      <p class="card-text"><i>People Call me  <span class="glyphicon glyphicon-earphone"></span></i> <b>{{user.username}}</b> </p>
+      <p class="card-text"><i>Email me at <span class="glyphicon glyphicon-envelope"></span></i>  <b>{{user.email}}</b> </p>
+      <p class="card-text"><i>I Live at </i> <b>{{user.address.street}}, {{user.address.suite}} ,{{user.address.city}}</b> </p>
+      <p class="card-text"><i>Call me on <span class="glyphicon glyphicon-earphone"></span></i> <b>{{user.phone}}</b> </p>
+      <p class="card-text"><i>My Website is <span class="glyphicon glyphicon-earphone"></span></i> <b>{{user.website}}</b> </p>
+      
+      
+      
+      <button class='btn btn-danger margin-right' (click)="goPrevious()"> << </button>
+      <button class='btn btn-danger margin-right' (click)="goBack()"> Go Back </button>
+      <button class='btn btn-danger margin-right' (click)="goNext()"> >> </button>
+    </div>
+  </div>
+</div>
+
+<ng-template #noUserFound>
+  <div class="flex-center margin">
+    <div>
+      <p> User with Id "{{userId}}" does not exist. </p>
+
+      <button class='btn btn-danger margin-right' (click)="goPrevious()"> << </button>
+      <button class='btn btn-danger margin-right' (click)="goBack()"> Go Back </button>
+      <button class='btn btn-danger margin-right' (click)="goNext()"> >> </button>
+    </div>
+  </div>
+</ng-template>

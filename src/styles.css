@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+.margin-right {
+    margin-right: 15px;
+    }
+.padding-top {
+    padding-top: 15px;
+}
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
+.margin{
+    margin: 5px 0px;;
+}
+.card{
+    border: none;
+}
+.padding40{
+   padding: 0px 40px;
+}
+.text-align-left{
+    text-align: left;
+}
+.submit-btn:disabled{
+    color: #fff;
+    background-color: grey;
+    border-color: grey;
+    cursor: not-allowed;
+}
